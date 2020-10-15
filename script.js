@@ -5,7 +5,7 @@ let photosArray = []
 let ready = false
 let imagesLoaded = 0
 let totalImages = 0
-
+let apiExpired = false
 // Unsplash API https://api.unsplash.com/photos/?client_id=YOUR_ACCESS_KEY
 let count = 5
 let apiKey = "Ls1nVcYk1SUIFTmdmk_-TL-rgB-Ed-cof-m2IC5A1tM"
@@ -74,12 +74,19 @@ function displayPhotos() {
 async function getPhotos() {
   try {
     const response = await fetch(apiUrl)
-    photosArray = await response.json()
+
+    if (response.status != 403) {
+      photosArray = await response.json()
+    } else {
+      imageContainer.insertAdjacentHTML(
+        "beforeend",
+        `<h1 class="api-error">API key has reached the query limit :( Sorry...</h1>`
+      )
+      loader.hidden = true
+    }
 
     displayPhotos()
-  } catch (error) {
-    //catch error here
-  }
+  } catch (error) {}
 }
 
 // check to see if scrolling near bottom of page, load more photos
