@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Great Vibes, sans-serif;
+
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(195, 0, 255, 0.322),
+    rgba(0, 217, 255, 0.281)
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 20px rgb(221, 239, 245);
+}
+::-webkit-scrollbar-track:hover {
+  background: rgb(221, 239, 245);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(221, 239, 245);
+  box-shadow: inset 0 0 3px rgb(217, 27, 255);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(221, 239, 245);
+  box-shadow: inset 0 0 10px rgb(217, 27, 255);
+  border-radius: 10px;
+}
+.title {
+  text-align: center;
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 500;
+  position: fixed;
+  left: 50%;
+  top: 3%;
+  transform: translate(-50%, -2%);
+  color: rgb(195, 0, 255);
+  z-index: 3;
+  border-radius: 10px;
+}
+
+/* Loader */
+
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.loader img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Image Container */
+.content-container {
+  margin: 10px 30%;
+  position: relative;
+  top: 10vh;
+  z-index: 1;
+  text-align: center;
+  color: black;
+  letter-spacing: 0.5rem;
+}
+.image-container {
+}
+
+.image-container img {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.img-description {
+  font-size: 2rem;
+}
+/* Media query for large Smartphone */
+
+@media screen and (max-width: 600px) {
+  .title {
+  }
+  .content-container {
+    margin: 10px;
+  }
+  .neon {
+    width: 220px;
+  }
+}
